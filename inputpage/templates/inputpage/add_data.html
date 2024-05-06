@@ -1,0 +1,67 @@
+<!-- add_data.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dken Medical Data Manager</title>
+</head>
+<body>
+    <h1>Dken Medical Data Manager</h1>
+    <form method="POST" action="{% url 'add_address' %}">
+        {% csrf_token %}
+        <h2>Add Address</h2>
+        <input type="text" name="street_number" placeholder="Street Number" required><br>
+        <input type="text" name="street_name" placeholder="Street Name" required><br>
+        <input type="text" name="suburb" placeholder="Suburb" required><br>
+        <input type="text" name="postcode" placeholder="Postcode" required><br>
+        <input type="text" name="state" placeholder="State" required><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <form method="POST" action="{% url 'add_patient' %}">
+        {% csrf_token %}
+        <h2>Add Patient</h2>
+        <input type="text" name="salutation" placeholder="Salutation" required><br>
+        <input type="text" name="first_name" placeholder="First Name" required><br>
+        <input type="text" name="last_name" placeholder="Last Name" required><br>
+        <input type="date" name="date_of_birth" placeholder="Date of Birth" required><br>
+        <input type="text" name="gender" placeholder="Gender" required><br>
+        <input type="text" name="contact_number" placeholder="Contact Number" required><br>
+        <input type="text" name="medicare_number" placeholder="Medicare Number" required><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <form method="POST" action="{% url 'add_practitioner' %}">
+        {% csrf_token %}
+        <h2>Add Practitioner</h2>
+        <input type="text" name="first_name" placeholder="First Name" required><br>
+        <input type="text" name="last_name" placeholder="Last Name" required><br>
+        <input type="text" name="job_title" placeholder="Job Title" required><br>
+        <input type="text" name="contact_number" placeholder="Contact Number" required><br>
+        <input type="text" name="primary_location" placeholder="Primary Location" required><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <form method="POST" action="{% url 'add_service' %}">
+        {% csrf_token %}
+        <h2>Add Service</h2>
+        <input type="text" name="service_name" placeholder="Service Name" required><br>
+        <input type="text" name="service_description" placeholder="Service Description" required><br>
+        <input type="text" name="service_medicare_item_number" placeholder="Medicare Item Number" required><br>
+        <input type="text" name="service_type" placeholder="Service Type" required><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <form method="POST" action="{% url 'add_consultation' %}">
+        {% csrf_token %}
+        <h2>Add Consultation</h2>
+        <input type="text" name="patient_id" placeholder="Patient ID" required><br>
+        <input type="text" name="practitioner_id" placeholder="Practitioner ID" required><br>
+        <input type="date" name="consultation_time" placeholder="Consultation Time" required><br>
+        <input type="text" name="consultation_type" placeholder="Consultation Type" required><br>
+        <input type="text" name="service_id" placeholder="Service ID" required><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
